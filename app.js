@@ -4,11 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//* instance created from express module which will be used to describe 
+//* and define the behavior of the API.
 var app = express();
 
+//* logger is mounted on the express application | Provides detailed logging for errors
 app.use(logger('dev'));
+
+//* Parses ONLY the JSON content type in the request body
 app.use(express.json());
+
+//* Parses only the URL-encoded request bodies and uses the query string library to do so.
 app.use(express.urlencoded({ extended: false }));
+
+//* Parses cookie in the header
 app.use(cookieParser());
 
 // catch 404 and forward to error handler
@@ -34,7 +43,7 @@ app.get('/', function(req, res) {
       status: 'up'
     });
 });
-  //! Will send error msg as JSON to the request if err occurs
+  //* Will send error msg as JSON to the request if err occurs
   res.json({
     message:res.locals.message,
     error:res.error
