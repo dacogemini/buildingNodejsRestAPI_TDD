@@ -1,4 +1,4 @@
-
+// MongoDB connection creation functional code
 (function () {
     'use strict';
     module.exports = {
