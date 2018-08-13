@@ -1,0 +1,9 @@
+
+{
+    "mongodb": {
+        "server": "localhost:32769",
+        "database": "customer_db_dev",
+        "user": null,
+        "password": null
+    }
+}

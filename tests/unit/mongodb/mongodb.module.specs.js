@@ -9,8 +9,12 @@ var MongoDBModule = require('../../../modules/mongodb/mongodb.module');
 describe('MongoDBModule', function() {
     //* Nested block runs a bunch of tests together
     describe('mongodb.module file', function(){
-        it('Should test first behavior', function() {
-            // Expressions for behavior go here
+        it('Should read the mongodb.module file', function() {
+            expect(MongoDBModule).to.be.a('object');
+        });
+
+        it('should confirm MongoDBUtil exist', function () {
+            expect(MongoDBModule.MongoDBUtil).to.be.a('object');
         });
     });
 });
